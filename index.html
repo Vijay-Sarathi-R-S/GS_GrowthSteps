@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GS-Growth Steps | Vijay Sarathi R S</title>
+  <meta name="description" content="Frontend portfolio for GS-Growth Steps by Vijay Sarathi R S." />
+  <style>
+    /* ── THEME VARIABLES ── */
+    :root[data-theme="light"] {
+      --bg: #fdfbf2;
+      --surface: #fffef7;
+      --surface-2: #f5f0d8;
+      --text: #1a1500;
+      --muted: #5a4a00;
+      --soft: #7a6320;
+      --yellow: #c9a800;
+      --yellow-2: #a88500;
+      --border: rgba(180,140,0,.28);
+      --shadow: 0 18px 50px rgba(0,0,0,.10);
+      --nav-bg: rgba(253,251,242,.90);
+      --stat-bg: rgba(180,140,0,.10);
+      --stat-border: rgba(180,140,0,.18);
+      --tag-bg: rgba(180,140,0,.12);
+      --tag-border: rgba(180,140,0,.22);
+      --contact-strip-bg: #f0ead6;
+      --profile-box-bg: linear-gradient(180deg,rgba(180,140,0,.22),rgba(180,140,0,.08));
+      --profile-box-text: #1a1500;
+      --profile-box-sub: #3a2e00;
+      --hero-p: #3a2e00;
+      --info-bg: linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.70));
+      --form-input-bg: #fdfbf2;
+      --form-note-bg: rgba(180,140,0,.10);
+      --footer-border: rgba(180,140,0,.22);
+      --btn-primary-bg: #c9a800;
+      --btn-primary-text: #1a1500;
+      --btn-secondary-bg: rgba(180,140,0,.08);
+      --radial1: rgba(180,140,0,.13);
+      --radial2: rgba(180,140,0,.10);
+      --grad1: #fdfbf2;
+      --grad2: #f5f0d8;
+    }
+    :root[data-theme="dark"] {
+      --bg: #070707;
+      --surface: #111111;
+      --surface-2: #1a1a1a;
+      --text: #fff8d6;
+      --muted: #e7d267;
+      --soft: #a08f3d;
+      --yellow: #f2cf1d;
+      --yellow-2: #ffe15c;
+      --border: rgba(242,207,29,.22);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --nav-bg: rgba(7,7,7,.85);
+      --stat-bg: rgba(242,207,29,.06);
+      --stat-border: rgba(242,207,29,.12);
+      --tag-bg: rgba(242,207,29,.10);
+      --tag-border: rgba(242,207,29,.16);
+      --contact-strip-bg: #1a1a1a;
+      --profile-box-bg: linear-gradient(180deg,rgba(242,207,29,.16),rgba(242,207,29,.05));
+      --profile-box-text: #e3dada;
+      --profile-box-sub: #dddbcd;
+      --hero-p: #f5edc0;
+      --info-bg: linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));
+      --form-input-bg: #0d0d0d;
+      --form-note-bg: rgba(242,207,29,.08);
+      --footer-border: rgba(242,207,29,.22);
+      --btn-primary-bg: #f2cf1d;
+      --btn-primary-text: #000;
+      --btn-secondary-bg: rgba(242,207,29,.05);
+      --radial1: rgba(242,207,29,.12);
+      --radial2: rgba(242,207,29,.10);
+      --grad1: #050505;
+      --grad2: #0b0b0b;
+    }
+
+    /* ── BASE ── */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Times New Roman",Times,serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left,var(--radial1),transparent 26%),
+        radial-gradient(circle at bottom right,var(--radial2),transparent 24%),
+        linear-gradient(180deg,var(--grad1) 0%,var(--grad2) 100%);
+      line-height:1.6;
+      transition: background .3s ease, color .3s ease;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(calc(100% - 32px),1180px);margin-inline:auto}
+    .section{padding:88px 0}
+    .skip-link{position:absolute;left:16px;top:-56px;background:var(--yellow);color:var(--btn-primary-text);padding:10px 14px;border-radius:999px;z-index:999}
+    .skip-link:focus{top:16px}
+
+    /* ── HEADER ── */
+    header{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand-mark{width:64px;height:64px;border:2px solid var(--yellow);border-radius:20px;display:grid;place-items:center;background:linear-gradient(180deg,rgba(242,207,29,.1),rgba(242,207,29,.02))}
+    .brand-mark svg{width:42px;height:42px;color:var(--yellow)}
+    .brand-copy h1{font-size:clamp(1.1rem,2vw,1.55rem);margin:0;letter-spacing:.06em;text-transform:uppercase;color:var(--text)}
+    .brand-copy p{margin:2px 0 0;color:var(--muted);font-size:.92rem;letter-spacing:.08em;text-transform:uppercase}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;flex-wrap:wrap;justify-content:flex-end}
+    nav a{color:var(--muted);font-size:1rem;padding:10px 12px;border-radius:999px;transition:220ms ease}
+    nav a:hover,nav a:focus-visible{background:rgba(242,207,29,.12);color:var(--text);outline:none}
+
+    /* ── THEME TOGGLE BUTTON ── */
+    .theme-toggle{
+      width:44px;height:44px;border-radius:50%;border:1px solid var(--border);
+      background:var(--surface-2);color:var(--yellow);cursor:pointer;
+      display:grid;place-items:center;font-size:1.25rem;
+      transition:220ms ease;flex-shrink:0;
+    }
+    .theme-toggle:hover{background:var(--stat-bg);transform:scale(1.08)}
+    .theme-toggle .icon-moon{display:none}
+    .theme-toggle .icon-sun{display:block}
+    [data-theme="dark"] .theme-toggle .icon-moon{display:block}
+    [data-theme="dark"] .theme-toggle .icon-sun{display:none}
+
+    /* ── HERO ── */
+    .hero{padding:72px 0 40px}
+    .hero-grid,.about-grid,.contact-grid,.timeline-wrap,.edu-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .hero-grid{grid-template-columns:1.1fr .9fr;gap:28px}
+    .hero-card,.info-card,.project-card,.timeline-card,.contact-card,.skill-box,.cert-card{
+      background:var(--info-bg);
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:42px;position:relative;overflow:hidden}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:var(--stat-bg);color:var(--yellow-2);font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}
+    .hero-main h2{font-size:clamp(2.7rem,6vw,5.3rem);line-height:.98;margin:18px 0 16px;color:var(--text)}
+    .hero-main h2 span{color:var(--yellow)}
+    .hero-main p{max-width:60ch;color:var(--hero-p);font-size:1.15rem;margin:0 0 28px}
+    .hero-actions,.contact-buttons{display:flex;flex-wrap:wrap;gap:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-size:1rem;border:1px solid transparent;transition:220ms ease;cursor:pointer}
+    .btn-primary{background:var(--btn-primary-bg);color:var(--btn-primary-text);font-weight:700}
+    .btn-secondary{border-color:var(--border);color:var(--text);background:var(--btn-secondary-bg)}
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
+    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .stat{padding:18px;border-radius:18px;background:var(--stat-bg);border:1px solid var(--stat-border)}
+    .stat strong{display:block;font-size:2rem;color:var(--yellow)}
+    .stat span{color:var(--muted);font-size:.95rem}
+
+    /* ── HERO SIDE ── */
+    .hero-side,.skill-box,.project-card,.timeline-card,.contact-card,.info-card,.cert-card{padding:26px}
+    .profile-box{padding:26px;border-radius:22px;background:var(--profile-box-bg);border:1px solid var(--border)}
+    .profile-box h3{margin:0 0 10px;font-size:2rem;color:var(--profile-box-text)}
+    .profile-box p{margin:0;color:var(--profile-box-sub);font-size:1.08rem}
+    .contact-strip{display:grid;gap:12px;margin-top:16px}
+    .contact-item{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--contact-strip-bg);border:1px solid var(--border)}
+    .contact-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--stat-bg);color:var(--yellow);flex-shrink:0}
+    .contact-item small{display:block;color:var(--soft)}
+    .contact-item strong{display:block;font-size:1.06rem;color:var(--text)}
+
+    /* ── SECTIONS ── */
+    .section-title{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .section-title h3{margin:0;font-size:clamp(2rem,4vw,3rem);color:var(--yellow)}
+    .section-title p{margin:0;color:var(--muted);max-width:42ch}
+    .info-card h4,.contact-card h4,.timeline-card h4,.skill-box h4,.cert-card h4,.project-card h4{margin:0 0 14px;font-size:1.55rem;color:var(--yellow-2)}
+    .info-list,.bullet-list,.mini-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+    .info-list li,.bullet-list li,.mini-list li{padding:12px 0;border-bottom:1px solid var(--border);color:var(--text)}
+    .info-list li:last-child,.bullet-list li:last-child,.mini-list li:last-child{border-bottom:none}
+
+    /* ── SKILLS ── */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{padding:8px 12px;border-radius:999px;font-size:.95rem;background:var(--tag-bg);border:1px solid var(--tag-border);color:var(--text)}
+
+    /* ── PROJECTS ── */
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .project-card{position:relative;overflow:hidden}
+    .project-card::before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:4px;background:linear-gradient(90deg,var(--yellow),transparent)}
+    .project-card p{color:var(--text)}
+
+    /* ── CONTACT ── */
+    .form-note{margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--form-note-bg);border:1px dashed var(--border);color:var(--muted)}
+    .contact-form{display:grid;gap:14px;margin-top:18px}
+    .contact-form label{color:var(--muted);font-size:.95rem;display:block;margin-bottom:4px}
+    .contact-form input,.contact-form textarea{
+      width:100%;padding:14px 16px;border-radius:14px;
+      border:1px solid var(--border);
+      background:var(--form-input-bg);
+      color:var(--text);
+      font-family:inherit;font-size:1rem;
+      transition:220ms ease;
+    }
+    .contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--yellow)}
+    .contact-card p{color:var(--text)}
+
+    /* ── FOOTER ── */
+    footer{padding:28px 0 48px;color:var(--muted)}
+    .footer-box{border-top:1px solid var(--footer-border);padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+
+    /* ── RESPONSIVE ── */
+    @media (max-width:980px){
+      .hero-grid,.about-grid,.contact-grid,.timeline-wrap,.edu-cert-grid,.skills-grid,.projects-grid{grid-template-columns:1fr}
+      .hero-stats{grid-template-columns:1fr}
+      .nav{min-height:auto;padding:14px 0;align-items:flex-start;flex-direction:column}
+      nav ul{justify-content:flex-start}
+    }
+    @media (max-width:640px){
+      .section{padding:68px 0}
+      .hero{padding-top:40px}
+      .hero-main,.hero-side,.info-card,.project-card,.timeline-card,.contact-card,.skill-box,.cert-card{padding:22px}
+      .hero-main h2{font-size:2.5rem}
+      .section-title{align-items:flex-start;flex-direction:column}
+      .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 48H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18 64H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M54 23V86" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-copy"><h1>GS-Growth Steps</h1><p>Freelance Web Development</p></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-card hero-main reveal">
+          <div class="eyebrow">AI + Web Development Freelancer</div>
+          <h2>Building <span>clean</span>, modern and growth-focused digital experiences.</h2>
+          <p>I am Vijay Sarathi R S, a Junior AI Engineer and frontend-focused developer creating portfolio sites, business websites, AI-powered web tools, and user-friendly freelance solutions under the GS-Growth Steps brand.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Project</a>
+            <a class="btn btn-secondary" href="mailto:rsvijaysarathi123@gmail.com?subject=Freelance%20Project%20Inquiry%20for%20GS-Growth%20Steps">Mail Directly</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>100+</strong><span>Students guided in technical bootcamps</span></div>
+            <div class="stat"><strong>5+</strong><span>Strong portfolio-ready projects across AI and web</span></div>
+            <div class="stat"><strong>8.1</strong><span>CGPA in B.Sc. Computer Science (AI & DS)</span></div>
+          </div>
+        </article>
+        <aside class="hero-card hero-side reveal">
+          <div class="profile-box">
+            <h3>Vijay Sarathi R S</h3>
+            <p>Junior AI Engineer | Web Developer | Freelancer for business growth websites and smart digital solutions.</p>
+          </div>
+          <div class="contact-strip">
+            <a class="contact-item" href="mailto:rsvijaysarathi123@gmail.com?subject=Project%20Discussion%20with%20GS-Growth%20Steps">
+              <div class="contact-icon">✉</div>
+              <div><small>Email</small><strong>rsvijaysarathi123@gmail.com</strong></div>
+            </a>
+            <a class="contact-item" href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20want%20to%20discuss%20a%20web%20development%20project." target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon">⚡</div>
+              <div><small>WhatsApp</small><strong>+91 99528 55157</strong></div>
+            </a>
+            <div class="contact-item">
+              <div class="contact-icon">◎</div>
+              <div><small>Focus</small><strong>Frontend websites, AI web apps, automation workflows</strong></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title reveal">
+          <h3>About</h3>
+          <p>GS-Growth Steps is a freelance identity focused on attractive websites and intelligent digital products for clients who want growth.</p>
+        </div>
+        <div class="about-grid">
+          <article class="info-card reveal">
+            <h4>Profile Summary</h4>
+            <p>Enthusiastic Computer Science undergraduate specializing in Artificial Intelligence and Data Science, with practical experience in Python, LLMs, AI agents, API-based systems, and full stack development.</p>
+          </article>
+          <article class="info-card reveal">
+            <h4>Quick Details</h4>
+            <ul class="info-list">
+              <li><strong>Role:</strong> Junior AI Engineer & Web Developer</li>
+              <li><strong>College:</strong> Dr. SNS Rajalakshmi College of Arts & Science</li>
+              <li><strong>Education:</strong> B.Sc. Computer Science (AI & DS)</li>
+              <li><strong>Languages:</strong> Tamil, Telugu, English</li>
+              <li><strong>Availability:</strong> Freelance web projects and frontend builds</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-title reveal">
+          <h3>Skills</h3>
+          <p>A balanced mix of frontend development, backend integration, AI tooling, and product prototyping.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-box reveal">
+            <h4>Programming</h4>
+            <div class="skill-tags">
+              <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML</span><span class="tag">CSS</span>
+            </div>
+          </article>
+          <article class="skill-box reveal">
+            <h4>AI & Tools</h4>
+            <div class="skill-tags">
+              <span class="tag">LLMs</span><span class="tag">LangChain</span><span class="tag">LangGraph</span><span class="tag">AutoGen</span><span class="tag">Prompt Engineering</span><span class="tag">n8n</span>
+            </div>
+          </article>
+          <article class="skill-box reveal">
+            <h4>Frameworks</h4>
+            <div class="skill-tags">
+              <span class="tag">Flask</span><span class="tag">Django</span><span class="tag">REST APIs</span><span class="tag">FlutterFlow</span><span class="tag">Figma</span><span class="tag">Automation</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-title reveal">
+          <h3>Projects</h3>
+          <p>Highlights of technical depth, practical problem solving, and work across AI, web platforms, and prototyping.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <h4>Agentic AI Multi-Agent System</h4>
+            <p>Built a multi-agent AI system using LangChain for coordinated task execution and intelligent decision workflows.</p>
+            <ul class="mini-list">
+              <li><strong>Extra Work:</strong> Streamlit-based resume analysis and ATS-friendly resume generation.</li>
+              <li><strong>Strength:</strong> Multi-agent orchestration and applied LLM workflows.</li>
+            </ul>
+          </article>
+          <article class="project-card reveal">
+            <h4>AI Job Search Assistant</h4>
+            <p>Developed a full stack AI assistant using Python Flask, HTML, and CSS for job search, recommendations, and career insights.</p>
+            <ul class="mini-list">
+              <li><strong>Frontend Value:</strong> Practical web interface development.</li>
+              <li><strong>Integration:</strong> LLM APIs for automation.</li>
+            </ul>
+          </article>
+          <article class="project-card reveal">
+            <h4>Legal Document AI Generator</h4>
+            <p>Built an AI-powered legal assistant using Django, Gemini API, and Grok API with structured document generation workflows.</p>
+            <ul class="mini-list">
+              <li><strong>Focus:</strong> AI-based workflow automation.</li>
+              <li><strong>Use Case:</strong> Structured legal output generation.</li>
+            </ul>
+          </article>
+          <article class="project-card reveal">
+            <h4>Start Growing Mobile Application</h4>
+            <p>Designed a growth tracking mobile app prototype using FlutterFlow, with emphasis on workflow design and product prototyping.</p>
+            <ul class="mini-list">
+              <li><strong>Prototype Skill:</strong> User flow planning and UX thinking.</li>
+              <li><strong>Freelance Appeal:</strong> Useful for startup and business MVP clients.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-title reveal">
+          <h3>Experience & Education</h3>
+          <p>Technical mentoring experience, academic background, certifications, and achievement highlights.</p>
+        </div>
+        <div class="timeline-wrap">
+          <article class="timeline-card reveal">
+            <h4>Professional Experience</h4>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px;color:var(--muted)">
+              <span>SNS iHub</span><span>June 2025 – Aug 2025</span>
+            </div>
+            <p style="margin:0 0 10px;color:var(--text)"><strong>Cohort Trainer Intern</strong></p>
+            <ul class="bullet-list">
+              <li>Trained students on Agentic AI Systems using LangChain, LangGraph, AutoGen, and n8n.</li>
+              <li>Led technical bootcamps for 100+ students on intelligent multi-agent automation systems.</li>
+              <li>Mentored students in AI workflow design and API-based automation integration.</li>
+              <li>Contributed to technical documentation and collaborative AI workshops.</li>
+            </ul>
+          </article>
+          <article class="timeline-card reveal">
+            <h4>Education</h4>
+            <ul class="bullet-list">
+              <li><strong>B.Sc. Computer Science (AI & DS)</strong> — Dr. SNS Rajalakshmi College of Arts & Science, CGPA: 8.1 (2023 – 2026)</li>
+              <li><strong>Higher Secondary (12th)</strong> — Chavara Vidya Bhavan, 76.17%</li>
+              <li><strong>Secondary School (10th)</strong> — Chavara Vidya Bhavan</li>
+              <li><strong>Achievement</strong> — All-Round Performer, 3rd Place</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS -->
+    <section class="section">
+      <div class="container edu-cert-grid">
+        <article class="cert-card reveal">
+          <h4>Certifications</h4>
+          <ul class="bullet-list">
+            <li>LLMs, MCP and Fundamentals of Agents — Hugging Face</li>
+            <li>Machine Learning at Scale and Advanced Machine Learning Operations — Databricks</li>
+            <li>Python Programming — Infosys SpringBoard</li>
+            <li>Coding Essentials for Agents and Agentic AI System Architectures & Design Patterns — SNS / Analytics Vidhya</li>
+          </ul>
+        </article>
+        <article class="cert-card reveal">
+          <h4>Freelance Services</h4>
+          <ul class="bullet-list">
+            <li>Frontend portfolio and business website design</li>
+            <li>Landing pages for startups and personal brands</li>
+            <li>AI-based web tools and automation dashboard interfaces</li>
+            <li>Responsive UI design with clean branding and conversion-focused layouts</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-title reveal">
+          <h3>Contact</h3>
+          <p>Reach out directly via email or WhatsApp, or send a message through the mail form below.</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <h4>Direct Contact</h4>
+            <p>For a simple frontend portfolio, the most reliable contact setup is direct email action plus WhatsApp quick chat.</p>
+            <div class="contact-buttons">
+              <a class="btn btn-primary" href="mailto:rsvijaysarathi123@gmail.com?subject=New%20Project%20Inquiry%20for%20GS-Growth%20Steps&body=Hello%20Vijay%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project.%0A%0AProject%20type%3A%0ABudget%3A%0ATimeline%3A">Send Mail</a>
+              <a class="btn btn-secondary" href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20am%20interested%20in%20your%20web%20development%20service." target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+            </div>
+            <div class="form-note">Tip: connect the form to Formspree, EmailJS, or Netlify Forms later without changing the design much.</div>
+          </article>
+          <article class="contact-card reveal">
+            <h4>Mail Form</h4>
+            <form class="contact-form" action="mailto:rsvijaysarathi123@gmail.com" method="post" enctype="text/plain">
+              <div><label for="subject"><b><color = "red"> Note: Currently Mail unavailable. Copy rsvijaysarathi123@gmail.com and directly send the mail.</color></b></div>
+              <div><label for="name">Your Name</label><input id="name" name="Name" type="text" placeholder="Enter your name" required /></div>
+              <div><label for="email">Your Email</label><input id="email" name="Email" type="email" placeholder="Enter your email" required /></div>
+              <div><label for="message">Project Message</label><textarea id="message" name="Message" rows="5" placeholder="Tell me about your website or freelance project" required></textarea></div>
+              <button class="btn btn-primary" type="submit">Send Through Mail App</button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      <span>© 2026 GS-Growth Steps</span>
+      <span>Designed By Vijay Sarathi R S — Yellow &amp; Black freelance portfolio</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ── THEME TOGGLE ── */
+    const html = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    // Start in light mode (already set on <html>), but respect saved preference
+    const saved = localStorage.getItem('gs-theme');
+    if (saved) html.setAttribute('data-theme', saved);
+
+    btn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('gs-theme', next);
+    });
+
+    /* ── SCROLL REVEAL ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
