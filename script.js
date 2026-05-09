@@ -2,6 +2,34 @@
    GS-Growth Steps | script.js
 ═══════════════════════════════════════════════ */
 
+/* ── LOADING SCREEN ── */
+(function () {
+  const loader = document.getElementById('gs-loader');
+  if (!loader) return;
+
+  // Minimum display time so the animation always plays fully (ms)
+  const MIN_DISPLAY = 1800;
+  const start = Date.now();
+
+  function hideLoader() {
+    const elapsed = Date.now() - start;
+    const delay   = Math.max(0, MIN_DISPLAY - elapsed);
+    setTimeout(function () {
+      loader.classList.add('gs-loader--hidden');
+      // Remove from DOM after transition ends so it never blocks interaction
+      loader.addEventListener('transitionend', function () {
+        loader.remove();
+      }, { once: true });
+    }, delay);
+  }
+
+  if (document.readyState === 'complete') {
+    hideLoader();
+  } else {
+    window.addEventListener('load', hideLoader);
+  }
+})();
+
 /* ── THEME TOGGLE ── */
 const html = document.documentElement;
 const btn  = document.getElementById('themeToggle');
