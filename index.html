@@ -85,11 +85,31 @@
           <div class="hero-stats">
             <div class="stat"><strong>100+</strong><span>Students guided in technical bootcamps</span></div>
             <div class="stat"><strong>5+</strong><span>Strong portfolio-ready projects across AI and web</span></div>
-            <div class="stat"><strong>8.1</strong><span>CGPA in B.Sc. Computer Science (AI & DS)</span></div>
+            <div class="stat"><strong>5+</strong><span>Successfull Startup WebSites, developed.</span></div>
           </div>
         </article>
 
         <aside class="hero-card hero-side reveal">
+
+          <!-- ── PHOTO FRAME ── -->
+          <!-- TO REPLACE: swap "images/vijay.jpg" with your actual file name -->
+          <div class="profile-photo-wrap">
+            <img
+              src="images/vijay.png"
+              alt="Vijay Sarathi R S — AI Engineer & Web Developer"
+              class="profile-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Placeholder shown only when image is missing -->
+            <div class="profile-photo-placeholder" style="display:none;">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="30" r="16" stroke="currentColor" stroke-width="3"/>
+                <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <span>Your photo here</span>
+            </div>
+          </div>
+
           <div class="profile-box">
             <h3>Vijay Sarathi R S</h3>
             <p>Junior AI Engineer | Web Developer | Freelancer for business growth websites and smart digital solutions.</p>
@@ -329,18 +349,16 @@
                 Open WhatsApp
               </a>
             </div>
-            <div class="form-note">
-              Tip: connect the form to Formspree, EmailJS, or Netlify Forms later without changing the design much.
-            </div>
+            
           </article>
 
           <article class="contact-card reveal">
             <h4>Mail Form</h4>
             <div class="form-warning">
-              ⚠️ Direct form mail is currently unavailable. Please copy
+              📩 Send your project details and I'll receive them directly in my inbox.
               <strong>rsvijaysarathi123@gmail.com</strong> and send your message directly.
             </div>
-            <form class="contact-form" action="mailto:rsvijaysarathi123@gmail.com" method="post" enctype="text/plain">
+            <form form id="contactForm" class="contact-form">
               <div>
                 <label for="name">Your Name</label>
                 <input id="name" name="Name" type="text" placeholder="Enter your name" required />
@@ -370,7 +388,7 @@
       <span>Designed by Vijay Sarathi R S — Yellow &amp; Black freelance portfolio</span>
     </div>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

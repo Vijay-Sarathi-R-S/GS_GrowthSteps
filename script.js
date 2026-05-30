@@ -52,3 +52,62 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+/* ── EMAILJS CONTACT FORM ── */
+
+// Make sure emailjs CDN is loaded in HTML
+// <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+/* ── EMAILJS CONTACT FORM ── */
+
+(function () {
+
+  emailjs.init("mCuzsR0T2pAiUHHyP");
+
+  const contactForm = document.getElementById("contactForm");
+
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector("button");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const templateParams = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    emailjs.send(
+      "service_kegm0bo",
+      "template_4j439oo",
+      templateParams
+    )
+    .then(function () {
+
+      alert("Message sent successfully!");
+
+      contactForm.reset();
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message";
+
+    })
+    .catch(function (error) {
+
+      console.error(error);
+
+      alert("Failed to send message.");
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message";
+
+    });
+
+  });
+
+})();

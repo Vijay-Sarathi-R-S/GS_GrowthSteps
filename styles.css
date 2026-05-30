@@ -255,6 +255,83 @@ nav a:hover, nav a:focus-visible {
 .stat strong { display: block; font-size: 1.8rem; color: var(--yellow); }
 .stat span { color: var(--muted); font-size: .88rem; }
 
+/* ── PROFILE PHOTO ── */
+.profile-photo-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 8px;
+}
+
+/* spinning dashed border ring */
+.profile-photo-ring {
+  position: absolute;
+  width: 172px; height: 172px;
+  border-radius: 50%;
+  border: 2px dashed var(--yellow);
+  opacity: .45;
+  animation: ringRotate 10s linear infinite;
+}
+@keyframes ringRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* soft yellow glow behind photo */
+.profile-photo-glow {
+  position: absolute;
+  width: 148px; height: 148px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--radial1) 0%, transparent 72%);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1);   opacity: .7; }
+  50%       { transform: scale(1.1); opacity: 1;  }
+}
+
+/* the photo itself */
+.profile-photo {
+  position: relative;
+  width: 148px; height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--yellow);
+  box-shadow: 0 0 0 6px var(--stat-bg), var(--shadow);
+  animation: photoFadeIn .9s cubic-bezier(.4,0,.2,1) both;
+  transition: transform .4s ease, box-shadow .4s ease;
+  z-index: 1;
+}
+.profile-photo:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 8px var(--stat-bg), 0 0 28px rgba(201,168,0,.35);
+}
+@keyframes photoFadeIn {
+  from { opacity: 0; transform: scale(.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* placeholder (shown only when image is missing) */
+.profile-photo-placeholder {
+  position: relative; z-index: 1;
+  width: 148px; height: 148px;
+  border-radius: 50%;
+  border: 3px dashed var(--border);
+  background: var(--stat-bg);
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; color: var(--muted);
+}
+.profile-photo-placeholder svg {
+  width: 48px; height: 48px; color: var(--yellow); opacity: .6;
+}
+.profile-photo-placeholder span {
+  font-size: .78rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+
 /* profile box inside hero side */
 .profile-box {
   padding: 24px; border-radius: 22px;
@@ -263,6 +340,7 @@ nav a:hover, nav a:focus-visible {
 }
 .profile-box h3 { margin: 0 0 10px; font-size: 1.7rem; color: var(--profile-box-text); }
 .profile-box p  { margin: 0; color: var(--profile-box-sub); font-size: 1rem; }
+
 
 /* contact strip */
 .contact-strip { display: grid; gap: 12px; margin-top: 16px; }
