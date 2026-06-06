@@ -4,391 +4,427 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GS-Growth Steps | Vijay Sarathi R S</title>
-  <meta name="GrowthSteps" content="Frontend portfolio for GS-Growth Steps by Vijay Sarathi R S." />
+  <meta name="description" content="GS-Growth Steps — Frontend portfolio of Vijay Sarathi R S. AI Engineer & Web Developer offering portfolio sites, business websites, landing pages, and AI-powered web tools." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ═══ LOADING SCREEN ═══ -->
-  <div id="gs-loader" aria-hidden="true">
-    <div class="loader-inner">
-      <div class="loader-logo">
+<!-- SIDEBAR TOGGLE -->
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-header">
+    <h3>GS-Growth Steps</h3>
+    <button id="closeSidebar" aria-label="Close navigation">✕</button>
+  </div>
+  <ul>
+    <li><a href="index.html" class="active-page">🏠 Home</a></li>
+    <li><a href="courses.html">📚 Courses</a></li>
+    <li><a href="services.html">🚀 Services</a></li>
+  </ul>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ═══ LOADING SCREEN ═══ -->
+<div id="gs-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M18 48H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M18 64H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M54 23V86" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="loader-wordmark">GS-Growth Steps</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-sub">Loading your experience…</div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          <path d="M18 48H56"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          <path d="M18 64H56"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          <path d="M54 23V86"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18 48H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18 64H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M54 23V86" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
           <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="loader-wordmark">GS-Growth Steps</div>
-      <div class="loader-bar-wrap">
-        <div class="loader-bar"></div>
+      <div class="brand-copy">
+        <h1>GS-Growth Steps</h1>
+        <p>Freelance Web Development</p>
       </div>
-      <div class="loader-sub">Loading your experience…</div>
+    </div>
+    <div class="nav-row">
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <span class="icon-sun"  aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+      </button>
     </div>
   </div>
+</header>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
 
-  <!-- ═══ HEADER ═══ -->
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-            <path d="M18 48H56"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-            <path d="M18 64H56"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-            <path d="M54 23V86"  stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-            <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-          </svg>
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <article class="hero-card hero-main reveal">
+        <div class="eyebrow">AI + Web Development Freelancer</div>
+        <h2>Building <span>clean</span>, modern and growth-focused digital experiences.</h2>
+        <p>I am Vijay Sarathi R S, a Junior AI Engineer and frontend-focused developer creating portfolio sites, business websites, AI-powered web tools, and freelance digital solutions under the GS-Growth Steps brand.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start a Project</a>
+          <a class="btn btn-secondary" href="mailto:rsvijaysarathi123@gmail.com?subject=Freelance%20Project%20Inquiry%20for%20GS-Growth%20Steps">Mail Directly</a>
         </div>
-        <div class="brand-copy">
-          <h1>GS-Growth Steps</h1>
-          <p>Freelance Web Development</p>
+        <div class="hero-stats">
+          <div class="stat"><strong>100+</strong><span>Students guided in technical bootcamps</span></div>
+          <div class="stat"><strong>5+</strong><span>Portfolio-ready AI and web projects</span></div>
+          <div class="stat"><strong>5+</strong><span>Startup websites successfully delivered</span></div>
         </div>
+      </article>
+
+      <aside class="hero-card hero-side reveal">
+
+        <!-- Profile Photo -->
+        <div class="profile-photo-wrap">
+          <div class="profile-photo-ring"></div>
+          <div class="profile-photo-glow"></div>
+          <!-- Replace "images/vijay.png" with your actual photo path -->
+          <img
+            src="images/vijay.png"
+            alt="Vijay Sarathi R S — AI Engineer & Web Developer"
+            class="profile-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="profile-photo-placeholder" style="display:none;">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="30" r="16" stroke="currentColor" stroke-width="3"/>
+              <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+            <span>Your photo here</span>
+          </div>
+        </div>
+
+        <div class="profile-box">
+          <h3>Vijay Sarathi R S</h3>
+          <p>Junior AI Engineer · Web Developer · Freelancer building business growth websites and smart digital solutions.</p>
+          <div class="social-links">
+            <a class="social-btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <!-- GitHub icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a class="social-btn" href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer">
+              <!-- LinkedIn icon -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-strip">
+          <a class="contact-item" href="mailto:rsvijaysarathi123@gmail.com?subject=Project%20Discussion%20with%20GS-Growth%20Steps">
+            <div class="contact-icon">✉</div>
+            <div>
+              <small>Email</small>
+              <strong>rsvijaysarathi123@gmail.com</strong>
+            </div>
+          </a>
+          <a class="contact-item" href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20want%20to%20discuss%20a%20web%20development%20project." target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon">💬</div>
+            <div>
+              <small>WhatsApp</small>
+              <strong>+91 99528 55157</strong>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-icon">🎯</div>
+            <div>
+              <small>Focus</small>
+              <strong>Frontend websites, AI web apps, automation workflows</strong>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-title reveal">
+        <h3>About</h3>
+        <p>GS-Growth Steps is a freelance identity focused on attractive websites and intelligent digital products for clients who want growth.</p>
       </div>
-
-      <div class="nav-row">
-        <nav aria-label="Primary">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact</a></li>
+      <div class="about-grid">
+        <article class="info-card reveal">
+          <h4>Profile Summary</h4>
+          <p>Enthusiastic Computer Science undergraduate specialising in Artificial Intelligence and Data Science, with practical experience in Python, LLMs, AI agents, API-based systems, and full-stack development.</p>
+        </article>
+        <article class="info-card reveal">
+          <h4>Quick Details</h4>
+          <ul class="info-list">
+            <li><strong>Role:</strong> Junior AI Engineer & Web Developer</li>
+            <li><strong>College:</strong> Dr. SNS Rajalakshmi College of Arts & Science</li>
+            <li><strong>Education:</strong> B.Sc. Computer Science (AI & DS)</li>
+            <li><strong>Languages:</strong> Tamil, Telugu, English</li>
+            <li><strong>Availability:</strong> Open to freelance web projects and frontend builds</li>
           </ul>
-        </nav>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
-          <span class="icon-sun"  aria-hidden="true">☀️</span>
-          <span class="icon-moon" aria-hidden="true">🌙</span>
-        </button>
+        </article>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-
-    <!-- ═══ HERO ═══ -->
-    <section class="hero">
-      <div class="container hero-grid">
-
-        <article class="hero-card hero-main reveal">
-          <div class="eyebrow">AI + Web Development Freelancer</div>
-          <h2>Building <span>clean</span>, modern and growth-focused digital experiences.</h2>
-          <p>I am Vijay Sarathi R S, a Junior AI Engineer and frontend-focused developer creating portfolio sites, business websites, AI-powered web tools, and user-friendly freelance solutions under the GS-Growth Steps brand.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary"   href="#contact">Start a Project</a>
-            <a class="btn btn-secondary" href="mailto:rsvijaysarathi123@gmail.com?subject=Freelance%20Project%20Inquiry%20for%20GS-Growth%20Steps">Mail Directly</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat"><strong>100+</strong><span>Students guided in technical bootcamps</span></div>
-            <div class="stat"><strong>5+</strong><span>Strong portfolio-ready projects across AI and web</span></div>
-            <div class="stat"><strong>5+</strong><span>Successfull Startup WebSites, developed.</span></div>
+  <!-- ═══ SKILLS ═══ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-title reveal">
+        <h3>Skills</h3>
+        <p>A balanced mix of frontend development, backend integration, AI tooling, and product prototyping.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-box reveal">
+          <h4>Programming</h4>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SQL</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
           </div>
         </article>
-
-        <aside class="hero-card hero-side reveal">
-
-          <!-- ── PHOTO FRAME ── -->
-          <!-- TO REPLACE: swap "images/vijay.jpg" with your actual file name -->
-          <div class="profile-photo-wrap">
-            <img
-              src="images/vijay.png"
-              alt="Vijay Sarathi R S — AI Engineer & Web Developer"
-              class="profile-photo"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-            />
-            <!-- Placeholder shown only when image is missing -->
-            <div class="profile-photo-placeholder" style="display:none;">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="30" r="16" stroke="currentColor" stroke-width="3"/>
-                <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-              <span>Your photo here</span>
-            </div>
+        <article class="skill-box reveal">
+          <h4>AI & Tools</h4>
+          <div class="skill-tags">
+            <span class="tag">LLMs</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">AutoGen</span>
+            <span class="tag">Prompt Engineering</span>
+            <span class="tag">n8n</span>
           </div>
-
-          <div class="profile-box">
-            <h3>Vijay Sarathi R S</h3>
-            <p>Junior AI Engineer | Web Developer | Freelancer for business growth websites and smart digital solutions.</p>
-          </div>
-          <div class="contact-strip">
-            <a class="contact-item" href="mailto:rsvijaysarathi123@gmail.com?subject=Project%20Discussion%20with%20GS-Growth%20Steps">
-              <div class="contact-icon">✉</div>
-              <div>
-                <small>Email</small>
-                <strong>rsvijaysarathi123@gmail.com</strong>
-              </div>
-            </a>
-            <a class="contact-item" href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20want%20to%20discuss%20a%20web%20development%20project." target="_blank" rel="noopener noreferrer">
-              <div class="contact-icon">⚡</div>
-              <div>
-                <small>WhatsApp</small>
-                <strong>+91 99528 55157</strong>
-              </div>
-            </a>
-            <div class="contact-item">
-              <div class="contact-icon">◎</div>
-              <div>
-                <small>Focus</small>
-                <strong>Frontend websites, AI web apps, automation workflows</strong>
-              </div>
-            </div>
-          </div>
-        </aside>
-
-      </div>
-    </section>
-
-    <!-- ═══ ABOUT ═══ -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-title reveal">
-          <h3>About</h3>
-          <p>GS-Growth Steps is a freelance identity focused on attractive websites and intelligent digital products for clients who want growth.</p>
-        </div>
-        <div class="about-grid">
-          <article class="info-card reveal">
-            <h4>Profile Summary</h4>
-            <p>Enthusiastic Computer Science undergraduate specialising in Artificial Intelligence and Data Science, with practical experience in Python, LLMs, AI agents, API-based systems, and full stack development.</p>
-          </article>
-          <article class="info-card reveal">
-            <h4>Quick Details</h4>
-            <ul class="info-list">
-              <li><strong>Role:</strong> Junior AI Engineer & Web Developer</li>
-              <li><strong>College:</strong> Dr. SNS Rajalakshmi College of Arts & Science</li>
-              <li><strong>Education:</strong> B.Sc. Computer Science (AI & DS)</li>
-              <li><strong>Languages:</strong> Tamil, Telugu, English</li>
-              <li><strong>Availability:</strong> Freelance web projects and frontend builds</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ SKILLS ═══ -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-title reveal">
-          <h3>Skills</h3>
-          <p>A balanced mix of frontend development, backend integration, AI tooling, and product prototyping.</p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-box reveal">
-            <h4>Programming</h4>
-            <div class="skill-tags">
-              <span class="tag">Python</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">SQL</span>
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-            </div>
-          </article>
-          <article class="skill-box reveal">
-            <h4>AI & Tools</h4>
-            <div class="skill-tags">
-              <span class="tag">LLMs</span>
-              <span class="tag">LangChain</span>
-              <span class="tag">LangGraph</span>
-              <span class="tag">AutoGen</span>
-              <span class="tag">Prompt Engineering</span>
-              <span class="tag">n8n</span>
-            </div>
-          </article>
-          <article class="skill-box reveal">
-            <h4>Frameworks</h4>
-            <div class="skill-tags">
-              <span class="tag">Flask</span>
-              <span class="tag">Django</span>
-              <span class="tag">REST APIs</span>
-              <span class="tag">FlutterFlow</span>
-              <span class="tag">Figma</span>
-              <span class="tag">Automation</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PROJECTS ═══ -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-title reveal">
-          <h3>Projects</h3>
-          <p>Highlights of technical depth, practical problem solving, and work across AI, web platforms, and prototyping.</p>
-        </div>
-        <div class="projects-grid">
-
-          <article class="project-card reveal">
-            <h4>Agentic AI Multi-Agent System</h4>
-            <p>Built a multi-agent AI system using LangChain for coordinated task execution and intelligent decision workflows.</p>
-            <ul class="mini-list">
-              <li><strong>Extra Work:</strong> Streamlit-based resume analysis and ATS-friendly resume generation.</li>
-              <li><strong>Strength:</strong> Multi-agent orchestration and applied LLM workflows.</li>
-            </ul>
-          </article>
-
-          <article class="project-card reveal">
-            <h4>AI Job Search Assistant</h4>
-            <p>Developed a full stack AI assistant using Python Flask, HTML, and CSS for job search, recommendations, and career insights.</p>
-            <ul class="mini-list">
-              <li><strong>Frontend Value:</strong> Practical web interface development.</li>
-              <li><strong>Integration:</strong> LLM APIs for automation.</li>
-            </ul>
-          </article>
-
-          <article class="project-card reveal">
-            <h4>Legal Document AI Generator</h4>
-            <p>Built an AI-powered legal assistant using Django, Gemini API, and Grok API with structured document generation workflows.</p>
-            <ul class="mini-list">
-              <li><strong>Focus:</strong> AI-based workflow automation.</li>
-              <li><strong>Use Case:</strong> Structured legal output generation.</li>
-            </ul>
-          </article>
-
-          <article class="project-card reveal">
-            <h4>Start Growing Mobile Application</h4>
-            <p>Designed a growth tracking mobile app prototype using FlutterFlow, with emphasis on workflow design and product prototyping.</p>
-            <ul class="mini-list">
-              <li><strong>Prototype Skill:</strong> User flow planning and UX thinking.</li>
-              <li><strong>Freelance Appeal:</strong> Useful for startup and business MVP clients.</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EXPERIENCE ═══ -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-title reveal">
-          <h3>Experience & Education</h3>
-          <p>Technical mentoring experience, academic background, certifications, and achievement highlights.</p>
-        </div>
-        <div class="timeline-wrap">
-
-          <article class="timeline-card reveal">
-            <h4>Professional Experience</h4>
-            <div class="exp-meta">
-              <span>SNS iHub</span>
-              <span>June 2025 – Aug 2025</span>
-            </div>
-            <p style="margin:0 0 10px;color:var(--text)"><strong>Cohort Trainer Intern</strong></p>
-            <ul class="bullet-list">
-              <li>Trained students on Agentic AI Systems using LangChain, LangGraph, AutoGen, and n8n.</li>
-              <li>Led technical bootcamps for 100+ students on intelligent multi-agent automation systems.</li>
-              <li>Mentored students in AI workflow design and API-based automation integration.</li>
-              <li>Contributed to technical documentation and collaborative AI workshops.</li>
-            </ul>
-          </article>
-
-          <article class="timeline-card reveal">
-            <h4>Education</h4>
-            <ul class="bullet-list">
-              <li><strong>B.Sc. Computer Science (AI & DS)</strong> — Dr. SNS Rajalakshmi College of Arts & Science, CGPA: 8.1 (2023 – 2026)</li>
-              <li><strong>Higher Secondary (12th)</strong> — Chavara Vidya Bhavan, 76.17%</li>
-              <li><strong>Secondary School (10th)</strong> — Chavara Vidya Bhavan</li>
-              <li><strong>Achievement</strong> — All-Round Performer, 3rd Place</li>
-            </ul>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ CERTIFICATIONS ═══ -->
-    <section class="section">
-      <div class="container edu-cert-grid">
-
-        <article class="cert-card reveal">
-          <h4>Certifications</h4>
-          <ul class="bullet-list">
-            <li>LLMs, MCP and Fundamentals of Agents — Hugging Face</li>
-            <li>Machine Learning at Scale and Advanced Machine Learning Operations — Databricks</li>
-            <li>Python Programming — Infosys SpringBoard</li>
-            <li>Coding Essentials for Agents and Agentic AI System Architectures & Design Patterns — SNS / Analytics Vidhya</li>
-          </ul>
         </article>
-
-        <article class="cert-card reveal">
-          <h4>Freelance Services</h4>
-          <ul class="bullet-list">
-            <li>Frontend portfolio and business website design</li>
-            <li>Landing pages for startups and personal brands</li>
-            <li>AI-based web tools and automation dashboard interfaces</li>
-            <li>Responsive UI design with clean branding and conversion-focused layouts</li>
-          </ul>
+        <article class="skill-box reveal">
+          <h4>Frameworks & Design</h4>
+          <div class="skill-tags">
+            <span class="tag">Flask</span>
+            <span class="tag">Django</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">FlutterFlow</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Responsive Design</span>
+          </div>
         </article>
-
       </div>
-    </section>
-
-    <!-- ═══ CONTACT ═══ -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-title reveal">
-          <h3>Contact</h3>
-          <p>Reach out directly via email or WhatsApp, or send a message through the mail form below.</p>
-        </div>
-        <div class="contact-grid">
-
-          <article class="contact-card reveal">
-            <h4>Direct Contact</h4>
-            <p>For a simple frontend portfolio, the most reliable contact setup is direct email action plus WhatsApp quick chat.</p>
-            <div class="contact-buttons">
-              <a class="btn btn-primary"
-                 href="mailto:rsvijaysarathi123@gmail.com?subject=New%20Project%20Inquiry%20for%20GS-Growth%20Steps&body=Hello%20Vijay%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project.%0A%0AProject%20type%3A%0ABudget%3A%0ATimeline%3A">
-                Send Mail
-              </a>
-              <a class="btn btn-secondary"
-                 href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20am%20interested%20in%20your%20web%20development%20service."
-                 target="_blank" rel="noopener noreferrer">
-                Open WhatsApp
-              </a>
-            </div>
-            
-          </article>
-
-          <article class="contact-card reveal">
-            <h4>Mail Form</h4>
-            <div class="form-warning">
-              📩 Send your project details and I'll receive them directly in my inbox.
-              <strong>rsvijaysarathi123@gmail.com</strong> and send your message directly.
-            </div>
-            <form form id="contactForm" class="contact-form">
-              <div>
-                <label for="name">Your Name</label>
-                <input id="name" name="Name" type="text" placeholder="Enter your name" required />
-              </div>
-              <div>
-                <label for="email">Your Email</label>
-                <input id="email" name="Email" type="email" placeholder="Enter your email" required />
-              </div>
-              <div>
-                <label for="message">Project Message</label>
-                <textarea id="message" name="Message" rows="5" placeholder="Tell me about your website or freelance project" required></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">Send Through Mail App</button>
-            </form>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <div class="container footer-box">
-      <span>© 2026 GS-Growth Steps</span>
-      <span>Designed by Vijay Sarathi R S — Yellow &amp; Black freelance portfolio</span>
     </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js"></script>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-title reveal">
+        <h3>Projects</h3>
+        <p>Highlights of technical depth, practical problem solving, and work across AI, web platforms, and prototyping.</p>
+      </div>
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <h4>Agentic AI Multi-Agent System</h4>
+          <p>Built a multi-agent AI system using LangChain for coordinated task execution and intelligent decision workflows.</p>
+          <ul class="mini-list">
+            <li><strong>Extra:</strong> Streamlit-based resume analysis and ATS-friendly resume generation.</li>
+            <li><strong>Strength:</strong> Multi-agent orchestration and applied LLM workflows.</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <h4>AI Job Search Assistant</h4>
+          <p>Developed a full-stack AI assistant using Python Flask, HTML, and CSS for job search, recommendations, and career insights.</p>
+          <ul class="mini-list">
+            <li><strong>Frontend:</strong> Practical web interface development.</li>
+            <li><strong>Integration:</strong> LLM APIs for automation.</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <h4>Legal Document AI Generator</h4>
+          <p>Built an AI-powered legal assistant using Django, Gemini API, and Grok API with structured document generation workflows.</p>
+          <ul class="mini-list">
+            <li><strong>Focus:</strong> AI-based workflow automation.</li>
+            <li><strong>Use Case:</strong> Structured legal output generation.</li>
+          </ul>
+        </article>
+
+        <article class="project-card reveal">
+          <h4>Start Growing Mobile Application</h4>
+          <p>Designed a growth tracking mobile app prototype using FlutterFlow, with emphasis on workflow design and product prototyping.</p>
+          <ul class="mini-list">
+            <li><strong>Prototype Skill:</strong> User flow planning and UX thinking.</li>
+            <li><strong>Freelance Appeal:</strong> Ideal for startup and business MVP clients.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-title reveal">
+        <h3>Experience & Education</h3>
+        <p>Technical mentoring experience, academic background, certifications, and achievement highlights.</p>
+      </div>
+      <div class="timeline-wrap">
+
+        <article class="timeline-card reveal">
+          <h4>Professional Experience</h4>
+          <div class="exp-meta">
+            <span>SNS iHub</span>
+            <span>June 2025 – Aug 2025</span>
+          </div>
+          <p style="margin:0 0 10px;color:var(--text)"><strong>Cohort Trainer Intern</strong></p>
+          <ul class="bullet-list">
+            <li>Trained students on Agentic AI Systems using LangChain, LangGraph, AutoGen, and n8n.</li>
+            <li>Led technical bootcamps for 100+ students on intelligent multi-agent automation systems.</li>
+            <li>Mentored students in AI workflow design and API-based automation integration.</li>
+            <li>Contributed to technical documentation and collaborative AI workshops.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-card reveal">
+          <h4>Education</h4>
+          <ul class="bullet-list">
+            <li><strong>B.Sc. Computer Science (AI & DS)</strong> — Dr. SNS Rajalakshmi College of Arts & Science, CGPA: 8.1 (2023 – 2026)</li>
+            <li><strong>Higher Secondary (12th)</strong> — Chavara Vidya Bhavan, 76.17%</li>
+            <li><strong>Secondary School (10th)</strong> — Chavara Vidya Bhavan</li>
+            <li><strong>Achievement</strong> — All-Round Performer, 3rd Place</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CERTIFICATIONS ═══ -->
+  <section class="section">
+    <div class="container edu-cert-grid">
+
+      <article class="cert-card reveal">
+        <h4>Certifications</h4>
+        <ul class="bullet-list">
+          <li>LLMs, MCP and Fundamentals of Agents — Hugging Face</li>
+          <li>Machine Learning at Scale & Advanced ML Operations — Databricks</li>
+          <li>Python Programming — Infosys SpringBoard</li>
+          <li>Coding Essentials for Agents & Agentic AI System Architectures — SNS / Analytics Vidhya</li>
+        </ul>
+      </article>
+
+      <article class="cert-card reveal">
+        <h4>Freelance Services</h4>
+        <ul class="bullet-list">
+          <li>Frontend portfolio and business website design</li>
+          <li>Landing pages for startups and personal brands</li>
+          <li>AI-based web tools and automation dashboard interfaces</li>
+          <li>Responsive UI design with clean branding and conversion-focused layouts</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title reveal">
+        <h3>Contact</h3>
+        <p>Reach out via email or WhatsApp, or send a message through the form below.</p>
+      </div>
+      <div class="contact-grid">
+
+        <article class="contact-card reveal">
+          <h4>Direct Contact</h4>
+          <p>For quick project discussions, email or WhatsApp is the fastest way to reach me.</p>
+          <div class="contact-buttons">
+            <a class="btn btn-primary"
+               href="mailto:rsvijaysarathi123@gmail.com?subject=New%20Project%20Inquiry%20for%20GS-Growth%20Steps&body=Hello%20Vijay%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project.%0A%0AProject%20type%3A%0ABudget%3A%0ATimeline%3A">
+              Send Mail
+            </a>
+            <a class="btn btn-secondary"
+               href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%20am%20interested%20in%20your%20web%20development%20service."
+               target="_blank" rel="noopener noreferrer">
+              Open WhatsApp
+            </a>
+          </div>
+        </article>
+
+        <article class="contact-card reveal">
+          <h4>Send a Message</h4>
+          <div class="form-warning">
+            📩 Your message will be sent directly to <strong>rsvijaysarathi123@gmail.com</strong> — I respond within 24 hours.
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div>
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" required />
+            </div>
+            <div>
+              <label for="email">Your Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div>
+              <label for="message">Project Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your website or freelance project" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container footer-box">
+    <span>© 2026 GS-Growth Steps · Vijay Sarathi R S</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services</a>
+      <a href="mailto:rsvijaysarathi123@gmail.com">Email</a>
+      <a href="https://wa.me/919952855157" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

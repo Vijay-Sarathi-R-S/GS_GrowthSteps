@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gen AI Sunday Course | GS-Growth Steps</title>
+  <meta name="description" content="Join the Gen AI Sunday course by GS-Growth Steps — a 1-month Sunday-only live program covering Generative AI, LLMs, Prompt Engineering, and building real AI applications." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ☰ SIDEBAR TOGGLE -->
+<button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">☰</button>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-header">
+    <h3>GS-Growth Steps</h3>
+    <button id="closeSidebar" aria-label="Close navigation">✕</button>
+  </div>
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="courses.html" class="active-page">📚 Courses</a></li>
+    <li><a href="services.html">🚀 Services</a></li>
+  </ul>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ═══ LOADING SCREEN ═══ -->
+<div id="gs-loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M18 48H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M18 64H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M54 23V86" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="loader-wordmark">GS-Growth Steps</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-sub">Loading your experience…</div>
+  </div>
+</div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 22C28 14 38 10 52 10C67 10 79 16 86 27" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18 48H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18 64H56" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M54 23V86" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M22 88H76C86 88 92 82 92 73C92 63 85 58 74 58H54" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-copy">
+        <h1>GS-Growth Steps</h1>
+        <p>Gen AI Training</p>
+      </div>
+    </div>
+    <div class="nav-row">
+      <nav aria-label="Course navigation">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#enroll">Enroll</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <span class="icon-sun"  aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero courses-hero">
+    <div class="container">
+      <article class="hero-card hero-main reveal">
+        <div class="eyebrow">📅 Every Sunday · 4 Live Sessions · 1 Month</div>
+        <h2>Gen AI <span>Sunday</span><br>1-Month Course</h2>
+        <p>A focused, hands-on programme to take you from zero to building real Generative AI applications — one Sunday at a time. Master LLMs, Prompt Engineering, AI APIs, and ship your first AI project in just 4 sessions.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#enroll">Enroll Now →</a>
+          <a class="btn btn-secondary" href="#curriculum">View Curriculum</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>4</strong><span>Sunday Sessions</span></div>
+          <div class="stat"><strong>2 hrs</strong><span>Per Session</span></div>
+          <div class="stat"><strong>3+</strong><span>Portfolio Projects</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ═══ COURSE OVERVIEW ═══ -->
+  <section class="section" id="overview">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Course Overview</h2>
+        <p>Everything you need to know before you join.</p>
+      </div>
+      <div class="course-meta-grid">
+        <div class="course-meta-card reveal">
+          <span class="course-meta-icon">📅</span>
+          <h4>Schedule</h4>
+          <p>Every Sunday<br>Morning Batch</p>
+        </div>
+        <div class="course-meta-card reveal">
+          <span class="course-meta-icon">⏱️</span>
+          <h4>Duration</h4>
+          <p>1 Month<br>4 Sessions Total</p>
+        </div>
+        <div class="course-meta-card reveal">
+          <span class="course-meta-icon">🎯</span>
+          <h4>Level</h4>
+          <p>Beginner to<br>Intermediate</p>
+        </div>
+        <div class="course-meta-card reveal">
+          <span class="course-meta-icon">💻</span>
+          <h4>Mode</h4>
+          <p>Online — Live<br>&amp; Recorded Access</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT YOU'LL LEARN ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>What You'll Learn</h2>
+        <p>Practical, industry-ready GenAI skills you can apply immediately.</p>
+      </div>
+      <div class="about-grid">
+        <article class="info-card reveal">
+          <h4>🤖 Generative AI Foundations</h4>
+          <ul class="bullet-list">
+            <li>How LLMs work and why they matter</li>
+            <li>Types of Generative AI models</li>
+            <li>Real-world GenAI use cases in 2025</li>
+          </ul>
+        </article>
+        <article class="info-card reveal">
+          <h4>✍️ Prompt Engineering</h4>
+          <ul class="bullet-list">
+            <li>Zero-shot, few-shot &amp; chain-of-thought prompting</li>
+            <li>Writing effective, production-grade prompts</li>
+            <li>Structured outputs &amp; prompt templates</li>
+          </ul>
+        </article>
+        <article class="info-card reveal">
+          <h4>🔌 AI APIs &amp; Python Integration</h4>
+          <ul class="bullet-list">
+            <li>OpenAI, Gemini and Anthropic APIs</li>
+            <li>Building AI-powered Python scripts</li>
+            <li>Connecting AI to real applications</li>
+          </ul>
+        </article>
+        <article class="info-card reveal">
+          <h4>🚀 Building &amp; Deploying AI Apps</h4>
+          <ul class="bullet-list">
+            <li>Chat interfaces with Streamlit</li>
+            <li>Document Q&amp;A (RAG basics)</li>
+            <li>Deploying live AI apps for your portfolio</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CURRICULUM ═══ -->
+  <section class="section" id="curriculum">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>4-Week Curriculum</h2>
+        <p>One Sunday at a time — structured for real learning and real results.</p>
+      </div>
+      <div class="curriculum-timeline">
+
+        <div class="curriculum-week reveal">
+          <div class="week-badge">Week<br>1</div>
+          <div class="week-content">
+            <h3>GenAI &amp; LLM Foundations</h3>
+            <p>Understand what Generative AI really is, how Large Language Models are trained, and explore the full landscape of modern AI tools. Set up your Python environment and run your first AI model.</p>
+            <div class="skill-tags">
+              <span class="tag">What is GenAI?</span>
+              <span class="tag">How LLMs Work</span>
+              <span class="tag">AI Tools Landscape</span>
+              <span class="tag">Environment Setup</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-week reveal">
+          <div class="week-badge">Week<br>2</div>
+          <div class="week-content">
+            <h3>Prompt Engineering Mastery</h3>
+            <p>Learn the art and science of crafting effective prompts. Practice zero-shot, few-shot, and chain-of-thought techniques with live exercises. Build a personal prompt library for real tasks.</p>
+            <div class="skill-tags">
+              <span class="tag">Prompt Patterns</span>
+              <span class="tag">Zero-shot / Few-shot</span>
+              <span class="tag">Chain-of-Thought</span>
+              <span class="tag">Prompt Templates</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-week reveal">
+          <div class="week-badge">Week<br>3</div>
+          <div class="week-content">
+            <h3>AI APIs &amp; Python Integration</h3>
+            <p>Connect to OpenAI, Gemini, and Anthropic APIs using Python. Build scripts that call AI models, process structured responses, and automate real-world workflows.</p>
+            <div class="skill-tags">
+              <span class="tag">OpenAI API</span>
+              <span class="tag">Gemini API</span>
+              <span class="tag">Python Scripts</span>
+              <span class="tag">Task Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-week reveal">
+          <div class="week-badge">Week<br>4</div>
+          <div class="week-content">
+            <h3>Build &amp; Deploy AI Applications</h3>
+            <p>Bring everything together to build a complete AI-powered application. Deploy it live on Streamlit Cloud or Hugging Face Spaces — a real project for your portfolio by end of session.</p>
+            <div class="skill-tags">
+              <span class="tag">Streamlit UI</span>
+              <span class="tag">RAG Basics</span>
+              <span class="tag">App Deployment</span>
+              <span class="tag">Portfolio Project</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Projects You'll Build</h2>
+        <p>Real, portfolio-ready AI projects — not toy examples.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <h4>🤖 AI Chat Assistant</h4>
+          <p>A fully functional AI chatbot powered by OpenAI or Gemini API with a clean Streamlit interface — deployed live and shareable with anyone.</p>
+        </article>
+        <article class="project-card reveal">
+          <h4>📄 Document Q&amp;A System</h4>
+          <p>Upload a PDF and ask it questions. A retrieval-based AI system that reads your documents and gives intelligent, context-aware answers.</p>
+        </article>
+        <article class="project-card reveal">
+          <h4>✍️ AI Content Generator</h4>
+          <p>A prompt-powered productivity tool that generates blogs, emails, or social posts on demand — your first real AI automation built from scratch.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHO IS IT FOR ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Who Is This For?</h2>
+      </div>
+      <div class="about-grid">
+        <article class="info-card reveal">
+          <h4>✅ Perfect For You If…</h4>
+          <ul class="bullet-list">
+            <li>You're a student curious about AI careers</li>
+            <li>You're a developer wanting to add AI to your stack</li>
+            <li>You're a professional exploring AI-powered automation</li>
+            <li>You want real projects to show in interviews</li>
+            <li>You have basic Python knowledge — or none at all</li>
+          </ul>
+        </article>
+        <article class="info-card reveal">
+          <h4>📋 Prerequisites</h4>
+          <ul class="bullet-list">
+            <li>Basic computer usage</li>
+            <li>Python basics — optional but helpful</li>
+            <li>A laptop with a stable internet connection</li>
+            <li>Curiosity and willingness to build things</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TECHNOLOGIES ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Tools &amp; Technologies</h2>
+        <p>Everything you'll work with inside the course.</p>
+      </div>
+      <div class="skill-tags" style="margin-top: 8px;">
+        <span class="tag reveal">Python</span>
+        <span class="tag reveal">OpenAI API</span>
+        <span class="tag reveal">Gemini API</span>
+        <span class="tag reveal">Anthropic API</span>
+        <span class="tag reveal">Streamlit</span>
+        <span class="tag reveal">LangChain Basics</span>
+        <span class="tag reveal">Prompt Engineering</span>
+        <span class="tag reveal">Hugging Face Spaces</span>
+        <span class="tag reveal">GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ENROLL / CONTACT ═══ -->
+  <section class="section" id="enroll">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Enroll Now</h2>
+        <p>Limited seats per batch. Reach out to confirm your spot.</p>
+      </div>
+      <div class="contact-grid">
+
+        <article class="contact-card reveal">
+          <h4>Quick Contact</h4>
+          <p>Reach out directly via WhatsApp for the fastest response — I'll confirm your seat and share all session details within a few hours.</p>
+          <div class="contact-buttons">
+            <a class="btn btn-primary"
+               href="https://wa.me/919952855157?text=Hello%20Vijay%2C%20I%27m%20interested%20in%20the%20Gen%20AI%20Sunday%20Course.%20Please%20share%20the%20next%20batch%20details."
+               target="_blank" rel="noopener noreferrer">
+              WhatsApp to Enroll
+            </a>
+            <a class="btn btn-secondary"
+               href="mailto:rsvijaysarathi123@gmail.com?subject=Gen%20AI%20Sunday%20Course%20Enrollment">
+              Email Inquiry
+            </a>
+          </div>
+          <div class="form-warning" style="margin-top: 20px;">
+            📩 After reaching out, you'll receive batch dates, session links, and any prerequisites within 24 hours.
+          </div>
+        </article>
+
+        <article class="contact-card reveal">
+          <h4>Send an Enrollment Request</h4>
+          <div class="form-warning">
+            Your message goes directly to <strong>rsvijaysarathi123@gmail.com</strong> — I reply within 24 hours.
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div>
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" required />
+            </div>
+            <div>
+              <label for="email">Your Email</label>
+              <input id="email" name="email" type="email" placeholder="Enter your email" required />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4"
+                placeholder="I'd like to enroll in the Gen AI Sunday Course. Please share details about the next batch, pricing, and timing…"
+                required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Enrollment Request</button>
+          </form>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container footer-box">
+    <span>© 2026 GS-Growth Steps · Vijay Sarathi R S</span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="services.html">Services</a>
+      <a href="mailto:rsvijaysarathi123@gmail.com">Email</a>
+      <a href="https://wa.me/919952855157" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
