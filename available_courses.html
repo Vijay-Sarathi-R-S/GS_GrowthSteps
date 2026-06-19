@@ -480,18 +480,18 @@ document.addEventListener('DOMContentLoaded', () => {
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-/* Footer */
-footer { background: var(--brand-bg); border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 0; }
-.footer-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-box span { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
-.footer-links a {
-  color: rgba(255,255,255,0.6) !important;
-  text-decoration: none !important;
-  margin-left: 20px;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: #fff !important; }
+<footer>
+  <div class="container footer-box">
+    <span>© 2026 GS-Growth Steps </span>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="available-courses.html">Courses</a>
+      <a href="services.html">Services</a>
+      <a href="mailto:rsvijaysarathi123@gmail.com">Email</a>
+      <a href="https://wa.me/919952855157" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</footer>
 
 <!-- Keeping your script tags as requested -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
