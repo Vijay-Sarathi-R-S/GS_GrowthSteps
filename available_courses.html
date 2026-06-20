@@ -297,6 +297,21 @@
     }
 
     .course-card .btn { width: 100%; justify-content: center; margin-top: auto; }
+
+  /* Footer */
+    footer { background: var(--brand-bg); border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 0; }
+    .footer-box { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-box span { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .trainer-card { flex-direction: column; text-align: center; }
+      .trainer-achievements { grid-template-columns: 1fr; }
+      .trainer-achievements li { justify-content: center; }
+      .footer-box { flex-direction: column; text-align: center; }
+      .footer-links a { margin: 0 10px; }
+    }
   </style>
 
   <!-- ═══ THEME INITIALIZATION (Moved to Head to prevent Flash) ═══ -->
@@ -485,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <span>© 2026 GS-Growth Steps </span>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="available-courses.html">Courses</a>
+      <a href="courses.html">Courses</a>
       <a href="services.html">Services</a>
       <a href="mailto:rsvijaysarathi123@gmail.com">Email</a>
       <a href="https://wa.me/919952855157" target="_blank" rel="noopener noreferrer">WhatsApp</a>
